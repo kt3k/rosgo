@@ -211,6 +211,7 @@ func startRemotePublisherConn(logger Logger,
 						continue
 					} else {
 						logger.Error("Failed to read a message size")
+						logger.Errorf("%v\n", err);
 						disconnectedChan <- pubUri
 						return
 					}
